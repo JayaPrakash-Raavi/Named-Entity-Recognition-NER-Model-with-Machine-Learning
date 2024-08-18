@@ -1,0 +1,30 @@
+digraph "Graph" {
+	graph [nodesep=1 ranksep=2 splines=false]
+	edge [arrowhead=none color="#707070"]
+	subgraph cluster_input {
+		1 [label="Embedding
+Input Dim: 47576
+Output Dim: 64" fillcolor=black fontcolor=white shape=square style=filled]
+	}
+	1 -> 2
+	subgraph cluster_1 {
+		color=white
+		2 [label="Embedding Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	2 -> 3
+	subgraph cluster_2 {
+		color=white
+		3 [label="Bidirectional Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	3 -> 4
+	subgraph cluster_3 {
+		color=white
+		4 [label="LSTM Layer" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	subgraph cluster_output {
+		color=white
+		5 [label="Embedding
+shape= 1" fillcolor=black fontcolor=white shape=egg style=filled]
+	}
+	arrowShape=none
+}
